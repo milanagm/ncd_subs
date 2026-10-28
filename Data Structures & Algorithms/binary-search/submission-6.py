@@ -1,0 +1,22 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        if len(nums)< 2: 
+            if nums[0] == target: 
+                return 0
+
+        i = int(len(nums)/ 2) #mitte
+        
+        while nums[i] >= target and i > -1:
+            if nums[i] == target: 
+                return i
+            if nums[i] > target: 
+                i -= 1 
+
+        while i < len(nums) and nums[i] <= target:
+            if nums[i] == target: 
+                return i
+            if nums[i] < target: 
+                i += 1
+        
+        return -1
+        
